@@ -1,0 +1,98 @@
+{% load static %}
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, intial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Member WishList</title>
+   </head>
+   <style>
+      #body{
+      background-color: PaleGreen;
+      }
+      #para1{
+      text-align: center;
+      font-size: 55px;
+      font-family: cursive;
+      color: Orange;
+      }
+      #img1{
+      padding-left: 750px;
+      padding-top: 30px;
+      width: 300px;
+      height: 250px;
+      }
+      #input1{
+      width: 180px;
+      height: 45px;
+      margin-left: 1300px;
+      border-radius: 15px;
+      font-family: lucida Console;
+      font-size: 20px;
+      background-color: LightSteelBlue;
+      color: OliveDrab;
+      }
+      #input2{
+      font-size: 20px;
+      font-family: serif;
+      height: 45px;
+      width: 180px;
+      border-radius: 25px;
+      background-color: ChartReuse;
+      margin-left:350px;
+      }
+      #input3{
+      font-size: 20px;
+      font-family: serif;
+      height: 45px;
+      width: 180px;
+      border-radius: 25px;
+      background-color: Red;
+      margin-left: 350px;
+      }
+      #div2{
+      margin-top: 25px;
+      border-width: 5px;
+      border-radius: 25px;
+      border-style: solid;
+      border-color: lightPink;
+      background-color: Linen;
+      display: flex;
+      }
+      #para2{
+      margin-left:  75px;
+      text-align: left;
+      font-size: 20px;
+      font-family: monospace;
+      color: MidnightBlue;
+      }
+      #para3{
+      margin-left:  75px;
+      text-align: left;
+      font-size: 15px;
+      font-family: monospace;
+      color: MidnightBlue;
+      }
+   </style>
+   <body>
+      <div id="div1">
+         <form action="logout">
+            <input id="input1" type="submit" value="LOGOUT">
+         </form>
+         <p id="para1">Issued Copies</p>
+         <br>
+      </div>
+      {% for issue in issues %}
+      <div id="div2">
+         <div>
+            <p id="para2">Book Details</p>
+            <p id="para3">
+               Book Name :{{ issue.bookname }}<br><br>
+               Department of Book :{{ issue.deptofbook }}<br><br>
+               Edition :{{ issue.edition }}<br><br>
+               </p>
+         </div>
+         </div>
+         {% endfor %}
+   </body>
+</html>

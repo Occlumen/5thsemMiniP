@@ -1,0 +1,93 @@
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Member account page</title>
+</head>
+<style>
+  #body{
+    background-position: center;
+  }
+  #bo{
+    font-family: cursive;
+    font-size: 40px;
+    color: lightcoral;
+    text-align: center;
+    height:90px;
+    width: 600px;
+    border:4px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: coral;
+    background-color:lightblue;
+  }
+  #box{
+    font-family: cursive;
+    font-size: 40px;
+    color: orange;
+    text-align: center;
+    height:90px;
+    width: 600px;
+    border:4px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: orange;
+    background-color:yellow;
+  }
+  #box1{
+    font-family: cursive;
+    font-size: 40px;
+    color: darkgreen;
+    text-align: center;
+    height:90px;
+    width: 600px;
+    border:4px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: darkgreen;
+    background-color: greenyellow;
+  }
+  #flex-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  #p{
+    height: 60px;
+    wight:400px;
+    padding: 10px;
+    text-align: center;
+    font-famiy: cursive;
+    font-size: 30px;
+    color: red;
+    border: 3px ;
+    border-style: dotted;
+    border-color: orange;
+    background-color: beige;
+    position: absolute;
+    top: 70px;
+    right: 15px;
+  }
+
+</style>
+<body id="body">
+  <form action="logout">
+     <button id="p"type="submit">Log out</button>
+  </form>
+  <div id='flex-container'><div class='blocks'>
+    <form action="memberwishlist">
+       <button id="bo" type="submit">WISHLIST</button> <br><br>
+    </form>
+    <form action="issuedcopies">
+        <button id="box" type="submit">ISSUED COPIES</button> <br> <br>
+    </form>
+    <form action="memberaccountdetails">
+        <button id="box1" type="submit">ACCOUNT DETAILS</button>
+    </form>
+  </div>
+  </div>
+</body>
+</html>

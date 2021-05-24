@@ -1,0 +1,138 @@
+{% load static %}
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, intial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Add Event Page</title>
+   </head>
+   <style>
+      #body{
+      background-image: url('{% static "images/addtask.jpg" %}');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      }
+      #input1{
+      width: 150px;
+      height: 55px;
+      margin-left: 1360px;
+      border-radius: 15px;
+      font-family: lucida Console;
+      font-size: 30px;
+      background-color: Navy;
+      color: LawnGreen;
+      }
+      #input1:hover {
+      background-color: Green;
+      color: white;
+      }
+      #para1{
+      text-align: center;
+      font-size: 55px;
+      font-family: cursive;
+      color: Tomato;
+      }
+      .form{
+      width= 50%;
+      position: relative;
+      height: 50px;
+      margin-left: 500px;
+      font-family: cursive;
+      overflow: hidden;
+      }
+      .form input{
+      width: 50%;
+      height: 90%;
+      color: Grey;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      background-color: Azure;
+      }
+      .form label{
+      position: absolute;
+      left: 0%;
+      width : 50%;
+      height: 80%;
+      pointer-events: none;
+      border-bottom: 1px solid black;
+      }
+      .form label::after{
+      content: "";
+      position: absolute;
+      left: 0px;
+      height: 100%;
+      width: 100%;
+      border-bottom: 3px solid DodgerBlue;
+      transform: translateX(-100%);
+      transition: all 0.3s ease;
+      }
+      .content-name{
+      position: absolute;
+      bottom: 5px;
+      left: 0px;
+      transition: transform 0.3s ease;
+      }
+      .form input:focus + .label-name .content-name, .form input:valid + .label-name .content-name{
+      transform: translateY(-100%);
+      font-size: 14px;
+      color: DodgerBlue;
+      }
+      .form input:focus + .label-name::after, .form input:valid + .label-name::after{
+      transform: translateX(0%);
+      }
+      #add{
+      width: 150px;
+      height: 55px;
+      margin-left: 670px;
+      border-radius: 15px;
+      font-family: lucida Console;
+      font-size: 30px;
+      background-color: Indigo;
+      color: LightBlue;
+      }
+      #add:hover {
+      background-color: BlueViolet;
+      color: white;
+      }
+   </style>
+   <body id="body">
+   <form action="back">
+      <input id="input1" type="submit"  value="BACK">
+   </form>
+      <p id="para1">Add Event</p>
+   <form action="adde" method="post">
+       {% csrf_token %}
+      <div class="form">
+         <input  type="text"  id="eventname" name="eventname" autocomplete="off" required />
+         <label for="eventname" class="label-name">
+         <span class="content-name">Event Name</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="text"  id="event-description" name="eventdesc" autocomplete="off" required />
+         <label for="event-description" class="label-name">
+         <span class="content-name">Event Description</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="date"  id="date-of-execution" name="dateofexe" autocomplete="off" required />
+         <label for="date-of-execution" class="label-name">
+         <span class="content-name">Date of execution</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="text"  id="event-location" name="eventloc" autocomplete="off" required />
+         <label for="event-location" class="label-name">
+         <span class="content-name">Event Location</span>
+         </label>
+      </div>
+      <br><br><br>
+      <input  id="add" type="submit"  value="ADD">
+       </form>
+      <br><br><br><br>
+   </body >
+</html >

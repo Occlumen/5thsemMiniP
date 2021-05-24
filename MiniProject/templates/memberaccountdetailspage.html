@@ -1,0 +1,74 @@
+{% load static %}
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, intial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Member Account Details</title>
+   </head>
+   <style>
+      #body{
+      background-color: LavenderBlush;
+      }
+      #para1{
+      text-align: center;
+      font-size: 75px;
+      font-family: cursive;
+      color: RebeccaPurple;
+      }
+      #input1{
+      width: 250px;
+      height: 75px;
+      margin-left: 1050px;
+      border-radius: 15px;
+      font-family: lucida Console;
+      font-size: 30px;
+      background-color: SlateBlue;
+      color: Lavender;
+      }
+      #img1{
+      padding-left: 500px;
+      padding-top: 30px;
+      width: 400px;
+      height: 300px;
+      }
+      #para2{
+      text-align: center;
+      font-size: 35px;
+      font-family: monospace;
+      color: MidnightBlue;
+      }
+      #input2{
+      width: 250px;
+      height: 75px;
+      margin-left: 1050px;
+      border-radius: 15px;
+      font-family: lucida Console;
+      font-size: 30px;
+      background-color: Red;
+      color: Lavender;
+      }
+   </style>
+   <body  id="body">
+   <form action="mlogout">
+      <input id="input1" type="submit"  value="LOGOUT">
+   </form>
+      <p id="para1">Account Details</p>
+      <br>
+      <img id="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIFBXY-0RYi-CBPJsIR_n8uDK5LpUZf16X8w&usqp=CAU">
+      <p id="para2">
+         USN :<br><br>
+         First Name :<br><br>
+         Last Name :<br><br>
+         Date of Birth :<br><br>
+         Department :<br><br>
+         E mail :<br><br>
+         Contact number :<br><br>
+         User Name :<br><br>
+      </p>
+      <form action="mback">
+         <input id="input2" type="submit"  value="BACK">
+      </form>
+      <br><br>
+   </body>
+</html>

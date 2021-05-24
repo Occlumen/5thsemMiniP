@@ -1,0 +1,164 @@
+{% load static %}
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, intial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Member Remove Event Page</title>
+   </head>
+   <style>
+      #body{
+      background-image: url('{% static "images/remove.png" %}');
+      align-items: center;
+      background-repeat: no-repeat;
+      background-size: 100% 135%;
+      }
+      #para1{
+      text-align: left;
+      font-size: 75px;
+      font-family: cursive;
+      color: Tomato;
+      }
+      select {
+   -webkit-appearance:none;
+   -moz-appearance:none;
+   -ms-appearance:none;
+   appearance:none;
+   outline:0;
+   box-shadow:none;
+   border:0!important;
+   background: #5c6664;
+   background-image: none;
+   flex: 1;
+   padding: 0 .5em;
+   color:#fff;
+   cursor:pointer;
+   font-size: 1em;
+   font-family: 'Open Sans', sans-serif;
+}
+select::-ms-expand {
+   display: none;
+}
+.select {
+   position: relative;
+   display: flex;
+   width: 20em;
+   height: 3em;
+   line-height: 3;
+   background: #5c6664;
+   overflow: hidden;
+   border-radius: .25em;
+}
+.select::after {
+   content: '\25BC';
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 0 1em;
+   background: #2b2e2e;
+   cursor:pointer;
+   pointer-events:none;
+   transition:.25s all ease;
+}
+.select:hover::after {
+   color: #23b499;
+}
+      #input1{
+      width: 150px;
+      height: 55px;
+      margin-left: 1360px;
+      border-radius: 15px;
+      font-family: lucida Console;
+      font-size: 30px;
+      background-color: MintCream;
+      color: Navy;
+      }
+      #input1:hover {
+      background-color: Green;
+      color: white;
+      }
+      .form{
+      width= 0%;
+      position: relative;
+      height: 50px;
+      margin-left: 520px;
+      font-family: cursive;
+      overflow: hidden;
+      }
+      .form input{
+      width: 50%;
+      height: 90%;
+      color: Grey;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      background-color: Beige;
+      }
+      .form label{
+      position: absolute;
+      left: 0%;
+      width : 50%;
+      height: 80%;
+      pointer-events: none;
+      border-bottom: 1px solid black;
+      }
+      .form label::after{
+      content: "";
+      position: absolute;
+      left: 0px;
+      height: 100%;
+      width: 100%;
+      border-bottom: 3px solid DodgerBlue;
+      transform: translateX(-100%);
+      transition: all 0.3s ease;
+      }
+      .content-name{
+      position: absolute;
+      bottom: 5px;
+      left: 0px;
+      transition: transform 0.3s ease;
+      }
+      .form input:focus + .label-name .content-name, .form input:valid + .label-name .content-name{
+      transform: translateY(-100%);
+      font-size: 14px;
+      color: DodgerBlue;
+      }
+      .form input:focus + .label-name::after, .form input:valid + .label-name::after{
+      transform: translateX(0%);
+      }
+      #input3{
+      width: 180px;
+      height: 55px;
+      margin-left: 80px;
+      border-radius: 15px;
+      font-family: lucida Console;
+      font-size: 20px;
+      background-color: LightPink;
+      color: Maroon;
+      }
+      #input3:hover {
+      background-color: Red;
+      color: white;
+      }
+   </style>
+   <body id="body">
+   <form action="back">
+            <input id="input1" type="submit"  value="BACK">
+   </form>
+      <p id="para1">Remove Event</p>
+      <br><br><br>
+   <form action="remove" method="post">
+      {% csrf_token %}
+       <div class="select">
+            <select  class="" name="event">
+               <option selected>--------------</option>
+                 {% for event in events %}
+                      <option value="{{event.id}}">{{event.eventname}}</option>
+                 {% endfor %}
+            </select>
+          </div>
+      <br><br><br>
+      <input id="input3" type="submit"  value="Remove Event">
+      </form>
+   </body>
+</html>

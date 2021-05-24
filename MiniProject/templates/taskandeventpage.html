@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, intial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Task/Event</title>
+   </head>
+   <style>
+      #body{
+      display: flex;
+      background-color: MintCream;
+      }
+      #div1{
+      height: 100%;
+      width : 750px;
+      border-width: 10px;
+      border-radius: 25px;
+      border-style: solid;
+      border-color: DarkMagenta;
+      }
+      #div2{
+      height: 100%;
+      width : 750px;
+      border-width: 10px;
+      border-radius: 25px;
+      border-style: solid;
+      border-color: DarkMagenta;
+      }
+      #para1{
+      text-align: center;
+      font-size: 75px;
+      font-family: cursive;
+      color: Orange;
+      }
+      #input1{
+      font-size: 20px;
+      font-family: serif;
+      height: 40px;
+      width: 110px;
+      border-radius: 25px;
+      background-color: ChartReuse;
+      margin-top: 80%;
+      margin-left:75px;
+      }
+      #input2{
+      font-size: 20px;
+      font-family: serif;
+      height: 40px;
+      width: 110px;
+      border-radius: 25px;
+      background-color: Red;
+      margin-top: 80%;
+      margin-left:75px;
+      }
+      #input3{
+      font-size: 20px;
+      font-family: serif;
+      height: 40px;
+      width: 110px;
+      border-radius: 25px;
+      background-color: MediumPurple;
+      margin-top:80%;
+      margin-left:75px;
+      }
+      #para2{
+      text-align: center;
+      font-size: 75px;
+      font-family: cursive;
+      color: Orange;
+      }
+      #input4{
+      font-size: 20px;
+      font-family: serif;
+      height: 40px;
+      width: 110px;
+      border-radius: 25px;
+      background-color: ChartReuse;
+      margin-top:80%;
+      margin-left:75px;
+      }
+      #input5{
+      font-size: 20px;
+      font-family: serif;
+      height: 40px;
+      width: 110px;
+      border-radius: 25px;
+      background-color: Red;
+      margin-top:80%;
+      margin-left:75px;
+      }
+      #input6{
+      font-size: 20px;
+      font-family: serif;
+      height: 40px;
+      width: 110px;
+      border-radius: 25px;
+      background-color: MediumPurple;
+      margin-top:80%;
+      margin-left:75px;
+      }
+   </style>
+   <body id="body">
+      <div id="div1">
+         <p id="para1">Task</p>
+         <br>
+         <div style="text-align: center; font-size: 15px; font-family: cursive;">
+             {% for task in tasks %}
+               Task Name :{{ task.taskname }}<br><br>
+               Task Description :{{ task.taskdesc }}<br><br>
+               Date of Execution :{{ task.dateofexecution }}<br><br>
+               Task Location :{{ task.taskloc }}<br><br>
+            -------------------------------------------------
+            <br><br>
+         {% endfor %}
+         </div>
+         <br>
+         <div style="display:flex">
+            <form action="addtask">
+            <input id="input1" type="submit" value="ADD">
+         </form>
+         <form action="removetask">
+            <input id="input2" type="submit" value="REMOVE">
+         </form>
+         <form action="back">
+            <input id="input3" type="submit" value="BACK">
+         </form>
+         </div>
+         </div>
+      <div id="div2" >
+         <p id="para2">Event</p>
+         <br>
+         <div style="text-align: center; font-size: 15px; font-family: cursive;">
+             {% for event in events %}
+               Event Name :{{ event.eventname }}<br><br>
+               Event Description :{{ event.eventdesc }}<br><br>
+               Date of Execution :{{ event.dateofexecution }}<br><br>
+               Event Location :{{ event.eventloc }}<br><br>
+            -------------------------------------------------
+             <br><br>
+         {% endfor %}
+         </div>
+         <br>
+         <div style="display:flex">
+         <form action="addevent">
+            <input id="input4" type="submit" value="ADD">
+         </form>
+         <form action="removeevent">
+            <input id="input5" type="submit" value="REMOVE">
+         </form>
+         <form action="back">
+            <input id="input6" type="submit" value="BACK">
+         </form>
+         </div>
+      </div>
+   </body>
+</html>

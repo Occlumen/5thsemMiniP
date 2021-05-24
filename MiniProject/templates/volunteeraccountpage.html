@@ -1,0 +1,102 @@
+{% load static %}
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Volunteer account page</title>
+   </head>
+   <style>
+      #body{
+      background-position: center center;
+      }
+      .box3{
+      font-family: cursive;
+      font-size: 40px;
+      color: white;
+      text-align: center;
+      height:90px;
+      width: 600px;
+      border:3px;
+      border-radius: 10px;
+      border-style: solid;
+      border-color: black;
+      background-color:palevioletred;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      }
+      .box4{
+      font-family: cursive;
+      font-size: 40px;
+      color: white;
+      text-align: center;
+      height:90px;
+      width: 600px;
+      border:3px;
+      border-radius: 10px;
+      border-style: solid;
+      border-color: black;
+      background-color:palevioletred;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      }
+      .box5{
+      font-family: cursive;
+      font-size: 40px;
+      color: white;
+      text-align: center;
+      height:90px;
+      width: 600px;
+      border:3px;
+      border-radius: 10px;
+      border-style: solid;
+      border-color:black;
+      background-color: palevioletred;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      }
+      #flex-container{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      }
+      .p{
+      height: 60px;
+      wight:400px;
+      padding: 10px;
+      text-align: center;
+      font-famiy: cursive;
+      font-size: 30px;
+      color: black;
+      border: 3px ;
+      border-style: dotted;
+      border-color: black;
+      background-color: beige;
+      position: absolute;
+      top: 70px;
+      right: 15px;
+      margin-right: 100px;
+      }
+      .button:hover{
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+      background-color: aquamarine;
+      color: rgb(243, 102, 102)
+      }
+   </style>
+   <body id="body">
+   <form action="volunteerlogout">
+      <button class="p button" type="submit">Log out</button>
+   </form>
+      <div id='flex-container'>
+         <div class='blocks'>
+            <form  action="volunteerdonation">
+               <button class="box3" type="submit">DONATION</button> <br><br>
+            </form>
+            <form action="taskandevent">
+               <button class="box4" type="submit">TASK/EVENT</button> <br> <br>
+            </form>
+            <form>
+               <button class="box5" type="submit">ACCOUNT DETAILS</button>
+            </form>
+         </div>
+      </div>
+   </body>
+</html>

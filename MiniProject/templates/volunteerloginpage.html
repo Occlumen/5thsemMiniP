@@ -1,0 +1,125 @@
+{% load static %}
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title> Volunteer login</title>
+   </head>
+   <style>
+      #body{
+      background-image: url('{% static "images/bg3.jpeg" %}');
+      background-size : cover;
+      background-repeat: no-repeat;
+      height: 500px;
+      }
+      #para1{
+      text-align: center;
+      font-size: 90px;
+      font-family: brush script mt;
+      color: beige;
+      }
+      #box1{
+      font-size: 25px;
+      font-family: monospace;
+      color: black;
+      height: 55px;
+      width: 500px;
+      border-radius: 20px;
+      background-color: white;
+      border-color: goldenrod;
+      }
+      .form{
+      width= 50%;
+      position: relative;
+      height: 50px;
+      margin-left: 500px;
+      font-family: cursive;
+      overflow: hidden;
+      }
+      .form input{
+      width: 50%;
+      height: 90%;
+      color: Grey;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      background-color: Beige;
+      }
+      .form label{
+      position: absolute;
+      left: 0%;
+      width : 50%;
+      height: 80%;
+      pointer-events: none;
+      border-bottom: 1px solid black;
+      }
+      .form label::after{
+      content: "";
+      position: absolute;
+      left: 0px;
+      height: 100%;
+      width: 100%;
+      border-bottom: 3px solid DodgerBlue;
+      transform: translateX(-100%);
+      transition: all 0.3s ease;
+      }
+      .content-name{
+      position: absolute;
+      bottom: 5px;
+      left: 0px;
+      transition: transform 0.3s ease;
+      }
+      .form input:focus + .label-name .content-name, .form input:valid + .label-name .content-name{
+      transform: translateY(-100%);
+      font-size: 14px;
+      color: DodgerBlue;
+      }
+      .form input:focus + .label-name::after, .form input:valid + .label-name::after{
+      transform: translateX(0%);
+      }
+      #login{
+      font-size: 25px;
+      font-family: monospace;
+      font-color: white;
+      height: 50px;
+      width: 120px;
+      background-color: orange;
+      text-align: center;
+      border-radius: 15px;
+      border-color: goldenrod;
+      }
+      #para2{
+      text-align: center;
+      font-size: 70px;
+      font-family: cursive;
+      color: white;
+      }
+   </style>
+   <body id="body">
+      <h1>
+         <p id="para1" >VOLUNTEER </p>
+      </h1>
+      <b>
+         <p id="para2"> LogIn </p>
+      </b>
+      <form method="post" action="volunteeraccount">
+         {% csrf_token %}
+      <div class="form">
+         <input  type="text"  id="Username" name="username" autocomplete="off" required />
+         <label for="Username" class="label-name">
+         <span class="content-name">Username</span>
+         </label>
+      </div>
+      <br> <br>
+      <div class="form">
+         <input  type="password"  id="Password" name="Password" autocomplete="off" required />
+         <label for="Password" class="label-name">
+         <span class="content-name">Password</span>
+         </label>
+      </div>
+      <br><br> <br>
+         <center><button  type="submit" id="login">Login</button></center>
+      </form>
+   </body>
+</html>

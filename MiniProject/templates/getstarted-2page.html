@@ -1,0 +1,87 @@
+{% load static %}
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, intial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="description" content="This is a awesome website">
+      <title>Sign Up</title>
+   </head>
+   <style>
+      #body{
+      background-image: url('{% static "images/logo1.jpeg" %}');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      }
+      #para1{
+      text-align: center;
+      font-size: 60px;
+      font-family: cursive;
+      color: MidnightBlue;
+      }
+      #box1{
+      font-size: 23px;
+      font-family: monospace;
+      color: white;
+      height: 60px;
+      width: 225px;
+      border-radius: 25px;
+      margin-left: 640px;
+      background-color: Tomato;
+      }
+      #box1:hover {
+      background-color: LightCoral;
+      color: white;
+      }
+      #box2{
+      font-size: 23px;
+      font-family: monospace;
+      color: white;
+      height: 60px;
+      width: 225px;
+      border-radius: 25px;
+      margin-left: 640px;
+      background-color: DodgerBlue;
+      }
+      #box2:hover {
+      background-color: LightBlue;
+      color: white;
+      }
+      #para2{
+      text-align: center;
+      font-size: 20px;
+      font-family: monospace;
+      }
+      #login{
+      font-size: 20px;
+      font-family: serif;
+      height: 40px;
+      width: 110px;
+      border-radius: 25px;
+      background-color: MediumSpringGreen;
+      }
+      #login:hover {
+      background-color: LightGreen;
+      color: white;
+      }
+   </style>
+   <body id="body">
+      <h1>
+         <p id="para1">SIGN UP</p>
+      </h1>
+      <br>
+      <form action="volunteersignup">
+         <input id="box1" type="submit"  value="As Volunteer">
+      </form>
+      <br> <br> <br>
+      <form action="membersignup">
+       <input id="box2" type="submit"  value="As Member">
+      </form>
+      <br> <br> <br> <br>
+      <form action="getstarted1">
+          <p id="para2">Have an account?
+         <input id="login" type="submit"  value="Login">
+      </p>
+      </form>
+   </body>
+</html>

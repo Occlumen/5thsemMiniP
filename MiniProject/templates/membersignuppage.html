@@ -1,0 +1,165 @@
+{% load static %}
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, intial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Member Sign Up</title>
+   </head>
+   <style>
+      #body{
+      background-image: url('{% static "images/Signup.jpg" %}');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      }
+      #para1{
+      text-align: center;
+      font-size: 55px;
+      font-family: cursive;
+      color: ForestGreen;
+      }
+      #para2{
+      text-align: center;
+      font-size: 45px;
+      font-family: monospace;
+      color: Crimson;
+      }
+      .form{
+      width= 60%;
+      position: relative;
+      height: 50px;
+      margin-left: 525px;
+      font-family: cursive;
+      overflow: hidden;
+      }
+      .form input{
+      width: 50%;
+      height: 90%;
+      color: Grey;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      background-color: Beige;
+      }
+      .form label{
+      position: absolute;
+      left: 0%;
+      width : 50%;
+      height: 80%;
+      pointer-events: none;
+      border-bottom: 1px solid black;
+      }
+      .form label::after{
+      content: "";
+      position: absolute;
+      left: 0px;
+      height: 100%;
+      width: 100%;
+      border-bottom: 3px solid DodgerBlue;
+      transform: translateX(-100%);
+      transition: all 0.3s ease;
+      }
+      .content-name{
+      position: absolute;
+      bottom: 5px;
+      left: 0px;
+      transition: transform 0.3s ease;
+      }
+      .form input:focus + .label-name .content-name, .form input:valid + .label-name .content-name{
+      transform: translateY(-100%);
+      font-size: 14px;
+      color: DodgerBlue;
+      }
+      .form input:focus + .label-name::after, .form input:valid + .label-name::after{
+      transform: translateX(0%);
+      }
+      #signup{
+      width: 150px;
+      height: 55px;
+      margin-left: 690px;
+      border-radius: 15px;
+      font-family: lucida Console;
+      font-size: 30px;
+      background-color: Teal;
+      color: SpringGreen;
+      }
+      #signup:hover {
+      background-color: Green;
+      color: white;
+      }
+   </style>
+   <body id="body">
+      <p id="para1">MEMBER</p>
+      <br>
+      <p id="para2"><b>SIGN UP</b></p>
+      <br>
+         <form method="POST" action="memberlogin">
+         {% csrf_token %}
+      <div class="form">
+         <input  type="text"  id="USN" name="usn" autocomplete="off" required />
+         <label for="USN" class="label-name">
+         <span class="content-name">USN</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="text"  id="first-name" name="firstname" autocomplete="off" required />
+         <label for="first-name" class="label-name">
+         <span class="content-name">First Name</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="text"  id="last-name" name="lastname" autocomplete="off" required />
+         <label for="last-name" class="label-name">
+         <span class="content-name">Last Name</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="date"  id="date-of-birth" name="dateofbirth" autocomplete="off" required />
+         <label for="date-of-birth" class="label-name">
+         <span class="content-name">Date of Birth</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="text"  id="department" name="department" autocomplete="off" required />
+         <label for="department" class="label-name">
+         <span class="content-name">Department</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="email"  id="email" name="email" autocomplete="off" required />
+         <label for="email" class="label-name">
+         <span class="content-name">E mail</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="number"  id="contact-number" name="contactnumber" autocomplete="off" required />
+         <label for="contact-number" class="label-name">
+         <span class="content-name">Contact number</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="text"  id="Username" name="username" autocomplete="off" required />
+         <label for="Username" class="label-name">
+         <span class="content-name">Username</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="password"  id="password" name="password" autocomplete="off" required />
+         <label for="password" class="label-name">
+         <span class="content-name">Password</span>
+         </label>
+      </div>
+      <br><br><br><br>
+        <input  id="signup" name="memberlogin" type="submit"  value="Sign Up">
+      </form>
+      <br><br><br><br>
+   </body >
+</html >

@@ -1,0 +1,94 @@
+{% load static %}
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Homepage</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+   </head>
+   <body>
+      <header>
+         <div class="menu-bar">
+            <img id="img1" src='{% static "images/logo2.jpeg" %}'>
+            <ul>
+               <li class="active"><a href="#"><i class="fa fa-home"></i>Home</a></li>
+               <li >
+                  <a href="#"><i class="fa fa-users"></i>Volunteer</a>
+                  <div class="sub-menu">
+                     <ul>
+                        <li><a href="getstarted1/volunteerlogin" target="_self">Login</a></li>
+                        <li><a href="getstarted1/getstarted2/volunteersignup" target="_self">Sign Up</a></li>
+                     </ul>
+                  </div>
+               </li>
+               <li>
+                  <a href="#"><i class="fa fa-users"></i>Member</a>
+                  <div class="sub-menu">
+                     <ul>
+                        <li><a href="getstarted1/memberlogin" target="_self">Login</a></li>
+                        <li><a href="getstarted1/getstarted2/membersignup" target="_self">Sign Up</a></li>
+                     </ul>
+                  </div>
+               </li>
+               <li>
+                  <a href="#"><i class="fa fa-user"></i>About Us</a>
+                  <div class="sub-menu">
+                     <ul>
+                        <li><a href="#">Mission</a></li>
+                        <li><a href="#">Vision</a></li>
+                        <li><a href="#">Team</a></li>
+                     </ul>
+                  </div>
+               </li>
+               <li><a href="#"><i class="fa fa-file-text"></i>FQA</a></li>
+               <li><a href="#"><i class="fa fa-phone"></i>Contact</a></li>
+            </ul>
+         </div>
+      </header>
+      <br><br><br><br><br><br><br><br><br>
+      <div class="maindiv">
+         <p style="color:DarkBlue; font-size:20px; font-family:cursive;"><b>Let's help each other</b></p>
+      </div>
+      <div id="div">
+         <form action="getstarted1">
+            <input  class="button" type="submit" style="vertical-align:middle" value="Get Started">
+         </form>
+      </div>
+      <br><br><br><br><br><br><br><br><br>
+      <br><br><br><br>
+      <footer id="footer">
+         <div id="div1">
+            <p id="p1">Drop US a Line.</p>
+            <br><br>
+            <p id="p2">Represent:</p>
+            <br>
+            <p id="p3">Address: Acharya Building <br>
+               Phone: 9123456782 <br>
+               Email: abcd@gmail.com
+            </p>
+         </div>
+         <div class="wrapper">
+            <div class="title">
+               <h1 style="font-family:cursive;">contact us form</h1>
+            </div>
+            <form method="POST" action="send">
+               {% csrf_token %}
+                  <div class="contact-form">
+               <div class="input-fields">
+                  <input type="text" class="input" placeholder="Name" name="name" autocomplete="off">
+                  <input type="text" class="input" placeholder="Email Address" name="email" autocomplete="off">
+                  <input type="number" class="input" placeholder="Phone" name="phone" autocomplete="off">
+                  <input type="text" class="input" placeholder="Subject" name="subject" autocomplete="off">
+               </div>
+               <div class="msg">
+                  <textarea placeholder="Message" name="message" autocomplete="off"></textarea>
+                  <div><button class="btn">send</button></div>
+               </div>
+            </div>
+            </form>
+         </div>
+      </footer>
+   </body>
+</html>

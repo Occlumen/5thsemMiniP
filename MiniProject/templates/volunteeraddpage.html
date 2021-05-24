@@ -1,0 +1,159 @@
+{% load static %}
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, intial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Volunteer Add Page</title>
+   </head>
+   <style>
+      #body{
+      background-image: url('{% static "images/Vadd.jpg" %}');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      }
+      #div1{
+      display: inline-flex;
+      }
+      #input1{
+      width: 150px;
+      height: 55px;
+      margin-top: 15px;
+      margin-left: 650px;
+      border-radius: 15px;
+      font-family: lucida Console;
+      font-size: 30px;
+      background-color: Salmon;
+      color: OldLace;
+      }
+      #input1:hover {
+      background-color: Tomato;
+      color: white;
+      }
+      #para1{
+      text-align:center;
+      font-size: 60px;
+      font-family: cursive;
+      color: MidnightBlue;
+      }
+      .form{
+      width= 30%;
+      position: relative;
+      height: 50px;
+      margin-left: 40px;
+      font-family: cursive;
+      overflow: hidden;
+      }
+      .form input{
+      width: 30%;
+      height: 90%;
+      color: Grey;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      background-color: Beige;
+      }
+      .form label{
+      position: absolute;
+      left: 0%;
+      width : 30%;
+      height: 80%;
+      pointer-events: none;
+      border-bottom: 1px solid black;
+      }
+      .form label::after{
+      content: "";
+      position: absolute;
+      left: 0px;
+      height: 100%;
+      width: 100%;
+      border-bottom: 3px solid DodgerBlue;
+      transform: translateX(-100%);
+      transition: all 0.3s ease;
+      }
+      .content-name{
+      position: absolute;
+      bottom: 5px;
+      left: 0px;
+      transition: transform 0.3s ease;
+      }
+      .form input:focus + .label-name .content-name, .form input:valid + .label-name .content-name{
+      transform: translateY(-100%);
+      font-size: 14px;
+      color: DodgerBlue;
+      }
+      .form input:focus + .label-name::after, .form input:valid + .label-name::after{
+      transform: translateX(0%);
+      }
+      #add{
+      width: 150px;
+      height: 55px;
+      margin-left: 150px;
+      border-radius: 15px;
+      font-family: lucida Console;
+      font-size: 25px;
+      background-color: YellowGreen;
+      color: SeaGreen;
+      }
+      #add:hover {
+      background-color: Green;
+      color: white;
+      }
+   </style>
+   <body id="body">
+      <div id="div1">
+         <p id="para1">Add Donation</p>
+         <form action="logout">
+            <input id="input1" type="submit"  value="LOGOUT">
+         </form>
+      </div>
+      <form action="adddonation" method="POST">
+         {% csrf_token %}
+      <div class="form">
+         <input  type="text"  id="copy/book-name" name="bookname" autocomplete="off" required />
+         <label for="copy/book-name" class="label-name">
+         <span class="content-name">Copy/Book Name</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="text"  id="department-of-book" name="department" autocomplete="off" required />
+         <label for="department-of-book" class="label-name">
+         <span class="content-name">Department of Book</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="text"  id="published-year" name="pubyear" autocomplete="off" required />
+         <label for="published-year" class="label-name">
+         <span class="content-name">Published Year</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="text"  id="edition" name="edition" autocomplete="off" required />
+         <label for="edition" class="label-name">
+         <span class="content-name">Edition</span>
+         </label>
+      </div>
+      <br>
+      <div class="form">
+         <input  type="text"  id="condition-of-book" name="condition" autocomplete="off" required />
+         <label for="condition-of-book" class="label-name">
+         <span class="content-name">Condition of Book</span>
+         </label>
+      </div>
+         <br>
+          <div class="form">
+         <input  type="date"  id="date-of-donation" name="dod" placeholder=""  autocomplete="off" required />
+         <label for="date-of-donation" class="label-name">
+         <span class="content-name">Date of Donation</span>
+         </label>
+      </div>
+      <br>
+      <br><br><br>
+      <input  id="add" type="submit"  value="ADD">
+      </form>
+      <br><br><br><br>
+   </body >
+</html >
